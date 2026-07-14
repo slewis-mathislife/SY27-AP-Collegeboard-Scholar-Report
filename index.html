@@ -121,7 +121,7 @@
   .tier-head.distinction h3 { color:var(--navy); } .tier-head.honor h3 { color:#0378ab; } .tier-head.scholar h3 { color:var(--steel); }
   .tier-head.distinction .tier-count { background:var(--navy); } .tier-head.honor .tier-count { background:var(--sky); } .tier-head.scholar .tier-count { background:var(--steel); }
 
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(224px,1fr)); gap:14px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
   .card { position:relative; background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; overflow:hidden; box-shadow:0 1px 2px rgba(4,30,66,.05); transition:transform .18s ease, box-shadow .18s ease; }
   .card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:5px; }
   .card.distinction::before { background:var(--navy); } .card.honor::before { background:var(--sky); } .card.scholar::before { background:var(--steel); }
@@ -135,6 +135,14 @@
   .stat { display:flex; flex-direction:column; }
   .stat .num { font-size:1.3rem; font-weight:800; color:var(--ink); line-height:1; }
   .stat .lab { font-size:.67rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-top:4px; }
+  .exams-passed { margin-top:14px; padding-top:14px; border-top:1px solid var(--line); }
+  .exams-label { display:block; margin-bottom:8px; font-size:.64rem; text-transform:uppercase; letter-spacing:.09em; font-weight:700; color:var(--muted); }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .exam { display:inline-flex; align-items:center; gap:6px; font-size:.75rem; font-weight:600; color:var(--navy); background:var(--ice); border:1px solid #d6e6f2; border-radius:8px; padding:4px 5px 4px 9px; }
+  .exam b { font-weight:800; font-size:.7rem; color:#fff; min-width:17px; height:17px; border-radius:5px; display:inline-flex; align-items:center; justify-content:center; }
+  .exam.s5 b { background:var(--navy); }
+  .exam.s4 b { background:var(--sky); }
+  .exam.s3 b { background:var(--steel); }
 
   /* Legend */
   .legend { margin-top:30px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px 26px; }
@@ -210,7 +218,7 @@
           <div class="legend-item"><div class="swatch honor"></div><div><h4>AP Scholar with Honor</h4><p>Average of 3.25 or higher on all exams, with scores of 3 or higher on four or more exams.</p></div></div>
           <div class="legend-item"><div class="swatch scholar"></div><div><h4>AP Scholar</h4><p>Scores of 3 or higher on three or more AP exams.</p></div></div>
         </div>
-        <p class="note">Names shown on each year's page are the recognized scholars. AP IDs, student IDs, and dates of birth from the source files are left out on purpose. Tap any grade heading to collapse or expand it.</p>
+        <p class="note">Each scholar's card lists the exams they passed, meaning a score of 3 or higher. The number on each chip is the score, colored by value: <b style="color:var(--navy)">5</b> deep navy, <b style="color:#0378ab">4</b> sky, <b style="color:var(--steel)">3</b> steel. Scores below 3 are left off. Names shown are the recognized scholars. AP IDs, student IDs, and dates of birth from the source files are left out on purpose. Tap any grade heading to collapse or expand it.</p>
       </div>
     </section>
     <section id="view-2022" class="view" role="tabpanel" aria-labelledby="tab-2022">
@@ -242,6 +250,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.57</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">6</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">US Government<b>5</b></span><span class="exam s5">World History<b>5</b></span><span class="exam s4">English Literature<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -257,6 +270,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">9</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">7</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">English Literature<b>4</b></span><span class="exam s4">US Government<b>4</b></span><span class="exam s3">Calculus BC<b>3</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -265,6 +283,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.22</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">9</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">English Literature<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -273,6 +296,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.38</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">8</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Calculus AB<b>3</b></span><span class="exam s3">Calculus BC<b>3</b></span><span class="exam s3">English Literature<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -281,6 +309,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">9</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">English Language<b>3</b></span><span class="exam s3">English Literature<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -289,6 +322,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.89</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">9</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">6</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">English Language<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">Calculus BC<b>3</b></span><span class="exam s3">English Literature<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US Government<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -325,6 +363,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.50</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Calculus AB<b>3</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -349,6 +392,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">3</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -357,6 +405,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">English Language<b>4</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -393,6 +446,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.40</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -408,6 +466,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.33</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -416,6 +479,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -424,6 +492,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.63</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">8</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">African Am Studies<b>5</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">Statistics<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -432,6 +505,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.17</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">Calculus AB<b>5</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -440,6 +518,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.17</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s4">Statistics<b>4</b></span><span class="exam s3">African Am Studies<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -448,6 +531,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.43</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -456,6 +544,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s3">Calculus AB<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -480,6 +573,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.50</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span></div>
             </div>
           </article>
           <article class="card honor">
@@ -488,6 +586,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.50</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">Seminar<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -503,6 +606,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -511,6 +619,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.75</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -519,6 +632,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Seminar<b>4</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -527,6 +645,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.75</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -563,6 +686,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.60</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">Seminar<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -578,6 +706,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.40</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s3">Calculus AB<b>3</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -593,6 +726,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -601,6 +739,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -609,6 +752,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.60</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -617,6 +765,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.33</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -625,6 +778,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.75</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -633,6 +791,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Seminar<b>4</b></span><span class="exam s3">Calculus AB<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -641,6 +804,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -665,6 +833,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.80</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">Precalculus<b>5</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s4">Statistics<b>4</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card distinction">
@@ -673,6 +846,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.83</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">6</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">English Language<b>5</b></span><span class="exam s4">Comp Sci A<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -688,6 +866,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.40</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">English Language<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">Precalculus<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -703,6 +886,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.67</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">3</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -711,6 +899,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.25</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">English Language<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">Precalculus<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -719,6 +912,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.33</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">3</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -727,6 +925,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -735,6 +938,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.25</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">English Language<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -743,6 +951,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.80</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -751,6 +964,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Chemistry<b>3</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -775,6 +993,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">3</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">Statistics<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -783,6 +1006,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.67</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">3</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -791,6 +1019,11 @@
             <div class="stats">
               <div class="stat"><span class="num">4.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">3</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Comp Sci Principles<b>4</b></span><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">World History<b>4</b></span></div>
             </div>
           </article>
           </div>
@@ -827,6 +1060,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.88</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">8</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">8</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">Calculus AB<b>5</b></span><span class="exam s5">Precalculus<b>5</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">Statistics<b>4</b></span><span class="exam s3">Physics 1<b>3</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card distinction">
@@ -835,6 +1073,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.86</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">7</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">Seminar<b>5</b></span><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">Statistics<b>4</b></span><span class="exam s3">Biology<b>3</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span></div>
             </div>
           </article>
           <article class="card distinction">
@@ -843,6 +1086,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.50</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">Seminar<b>5</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">Statistics<b>3</b></span></div>
             </div>
           </article>
           <article class="card distinction">
@@ -851,6 +1099,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.80</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">English Language<b>5</b></span><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">Statistics<b>4</b></span><span class="exam s3">Biology<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card distinction">
@@ -859,6 +1112,11 @@
             <div class="stats">
               <div class="stat"><span class="num">4.22</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">9</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">9</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">Calculus AB<b>5</b></span><span class="exam s5">English Language<b>5</b></span><span class="exam s5">Physics 1<b>5</b></span><span class="exam s5">Seminar<b>5</b></span><span class="exam s4">Comp Sci A<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -874,6 +1132,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.25</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">8</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">7</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">Statistics<b>4</b></span><span class="exam s3">Calculus AB<b>3</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card honor">
@@ -882,6 +1145,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.25</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Physics 1<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span></div>
             </div>
           </article>
           <article class="card honor">
@@ -890,6 +1158,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.38</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">8</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">6</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">Seminar<b>5</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">Biology<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span></div>
             </div>
           </article>
           <article class="card honor">
@@ -898,6 +1171,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.43</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">6</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">Seminar<b>4</b></span><span class="exam s3">Biology<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card honor">
@@ -906,6 +1184,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.75</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">Physics 1<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -921,6 +1204,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -929,6 +1217,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Seminar<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Statistics<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -937,6 +1230,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.25</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">African Am Studies<b>4</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -945,6 +1243,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.80</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">African Am Studies<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -953,6 +1256,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.67</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">Calculus AB<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -961,6 +1269,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.17</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">Biology<b>3</b></span><span class="exam s3">English Language<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -969,6 +1282,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.71</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Calculus AB<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -977,6 +1295,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.13</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">8</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">8</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Seminar<b>4</b></span><span class="exam s3">Biology<b>3</b></span><span class="exam s3">Chemistry<b>3</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Physics 1<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -985,6 +1308,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.33</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">Calculus AB<b>3</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -993,6 +1321,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.67</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">Biology<b>3</b></span><span class="exam s3">Comp Sci A<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -1017,6 +1350,11 @@
             <div class="stats">
               <div class="stat"><span class="num">4.20</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">English Language<b>5</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s4">World History<b>4</b></span></div>
             </div>
           </article>
           <article class="card distinction">
@@ -1025,6 +1363,11 @@
             <div class="stats">
               <div class="stat"><span class="num">4.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">7</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">Precalculus<b>5</b></span><span class="exam s4">Comp Sci Principles<b>4</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">Comp Sci A<b>3</b></span></div>
             </div>
           </article>
           <article class="card distinction">
@@ -1033,6 +1376,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.60</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -1048,6 +1396,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.33</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">6</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">English Language<b>4</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">Statistics<b>3</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card honor">
@@ -1056,6 +1409,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.33</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s5">English Language<b>5</b></span><span class="exam s4">Precalculus<b>4</b></span><span class="exam s4">US History<b>4</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -1071,6 +1429,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.20</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">5</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">5</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Comp Sci Principles<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1079,6 +1442,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.75</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">4</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1087,6 +1455,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.83</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1095,6 +1468,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.57</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1103,6 +1481,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.57</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">Seminar<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1111,6 +1494,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.33</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">4</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span><span class="exam s3">World History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1119,6 +1507,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.50</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">6</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">English Language<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1127,6 +1520,11 @@
             <div class="stats">
               <div class="stat"><span class="num">3.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">6</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Seminar<b>4</b></span><span class="exam s4">World History<b>4</b></span><span class="exam s3">Comp Sci Principles<b>3</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Precalculus<b>3</b></span><span class="exam s3">US History<b>3</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1135,6 +1533,11 @@
             <div class="stats">
               <div class="stat"><span class="num">2.43</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">7</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Precalculus<b>4</b></span><span class="exam s3">English Language<b>3</b></span><span class="exam s3">Seminar<b>3</b></span></div>
             </div>
           </article>
           </div>
@@ -1159,6 +1562,11 @@
             <div class="stats">
               <div class="stat"><span class="num">4.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">3</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">English Language<b>4</b></span><span class="exam s4">Microeconomics<b>4</b></span><span class="exam s4">World History<b>4</b></span></div>
             </div>
           </article>
           <article class="card scholar">
@@ -1167,6 +1575,11 @@
             <div class="stats">
               <div class="stat"><span class="num">4.00</span><span class="lab">avg score</span></div>
               <div class="stat"><span class="num">3</span><span class="lab">exams</span></div>
+              <div class="stat"><span class="num">3</span><span class="lab">passed</span></div>
+            </div>
+            <div class="exams-passed">
+              <span class="exams-label">Exams passed</span>
+              <div class="chips"><span class="exam s4">Comp Sci Principles<b>4</b></span><span class="exam s4">English Language<b>4</b></span><span class="exam s4">World History<b>4</b></span></div>
             </div>
           </article>
           </div>
