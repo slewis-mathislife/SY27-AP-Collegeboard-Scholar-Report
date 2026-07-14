@@ -30,7 +30,8 @@
   }
   .topbar .wrap { display:flex; align-items:center; gap:20px; height:60px; }
   .brand { color:#fff; font-weight:800; letter-spacing:.02em; font-size:1rem; white-space:nowrap; }
-  .brand span { color:var(--sky); }
+  .brand-hl { color:var(--sky); }
+  .nav-select { display:none; }
   .tabs { display:flex; gap:4px; margin-left:auto; overflow-x:auto; }
   .tab {
     appearance:none; border:0; background:transparent; cursor:pointer;
@@ -79,6 +80,8 @@
   .chart-note { margin:14px 0 0; font-size:.82rem; color:var(--muted); }
 
   .trend-table { width:100%; border-collapse:collapse; margin-top:6px; font-size:.92rem; }
+  .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .table-scroll .trend-table { min-width:520px; }
   .trend-table th { text-align:right; padding:10px 12px; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); border-bottom:2px solid var(--navy); }
   .trend-table th:first-child { text-align:left; }
   .trend-table td { text-align:right; padding:11px 12px; border-bottom:1px solid var(--line); color:var(--ink); }
@@ -155,6 +158,17 @@
   .legend-item p { margin:0; font-size:.82rem; color:var(--muted); line-height:1.45; }
   .note { margin:20px 0 0; font-size:.83rem; color:var(--muted); font-style:italic; }
 
+  @media (max-width:640px) {
+    .topbar .wrap { height:54px; gap:12px; }
+    .brand-full { display:none; }
+    .tabs { display:none; }
+    .nav-select {
+      display:block; margin-left:auto; flex:0 1 auto; max-width:62%;
+      background:#fff; color:var(--navy); font:inherit; font-weight:700; font-size:.95rem;
+      border:0; border-radius:10px; padding:9px 12px; min-height:40px;
+    }
+    .nav-select:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+  }
   @media (max-width:560px) {
     .year-hero { align-items:flex-start; }
     .year-hero-meta, .mini-row { text-align:left; justify-content:flex-start; }
@@ -168,10 +182,13 @@
 <body>
   <div class="topbar">
     <div class="wrap">
-      <span class="brand">Newark Collegiate <span>AP Scholars</span></span>
+      <span class="brand"><span class="brand-full">Newark Collegiate </span><span class="brand-hl">AP Scholars</span></span>
       <nav class="tabs" role="tablist" aria-label="Select a year">
         <button class="tab active" id="tab-overview" data-view="overview" role="tab" aria-selected="true">Overview</button><button class="tab" id="tab-2022" data-view="2022" role="tab" aria-selected="false">2022</button><button class="tab" id="tab-2023" data-view="2023" role="tab" aria-selected="false">2023</button><button class="tab" id="tab-2024" data-view="2024" role="tab" aria-selected="false">2024</button><button class="tab" id="tab-2025" data-view="2025" role="tab" aria-selected="false">2025</button><button class="tab" id="tab-2026" data-view="2026" role="tab" aria-selected="false">2026</button>
       </nav>
+      <select class="nav-select" id="navSelect" aria-label="Jump to a year">
+        <option value="overview">Overview</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option>
+      </select>
     </div>
   </div>
 
@@ -208,7 +225,7 @@
 
       <div class="table-card">
         <h2>Year by year</h2>
-        <table class="trend-table"><tr><th>Year</th><th>Total</th><th>Distinction</th><th>Honor</th><th>Scholar</th><th>12th</th><th>11th</th><th>10th</th></tr><tr><td class="yr-cell">2022</td><td class="tot-cell">6</td><td>1</td><td>—</td><td>5</td><td>6</td><td>—</td><td>—</td></tr><tr><td class="yr-cell">2023</td><td class="tot-cell">3</td><td>—</td><td>—</td><td>3</td><td>1</td><td>2</td><td>—</td></tr><tr><td class="yr-cell">2024</td><td class="tot-cell">14</td><td>—</td><td>3</td><td>11</td><td>8</td><td>6</td><td>—</td></tr><tr><td class="yr-cell">2025</td><td class="tot-cell">22</td><td>3</td><td>2</td><td>17</td><td>9</td><td>10</td><td>3</td></tr><tr><td class="yr-cell">2026</td><td class="tot-cell">36</td><td>8</td><td>7</td><td>21</td><td>20</td><td>14</td><td>2</td></tr></table>
+        <div class="table-scroll"><table class="trend-table"><tr><th>Year</th><th>Total</th><th>Distinction</th><th>Honor</th><th>Scholar</th><th>12th</th><th>11th</th><th>10th</th></tr><tr><td class="yr-cell">2022</td><td class="tot-cell">6</td><td>1</td><td>—</td><td>5</td><td>6</td><td>—</td><td>—</td></tr><tr><td class="yr-cell">2023</td><td class="tot-cell">3</td><td>—</td><td>—</td><td>3</td><td>1</td><td>2</td><td>—</td></tr><tr><td class="yr-cell">2024</td><td class="tot-cell">14</td><td>—</td><td>3</td><td>11</td><td>8</td><td>6</td><td>—</td></tr><tr><td class="yr-cell">2025</td><td class="tot-cell">22</td><td>3</td><td>2</td><td>17</td><td>9</td><td>10</td><td>3</td></tr><tr><td class="yr-cell">2026</td><td class="tot-cell">36</td><td>8</td><td>7</td><td>21</td><td>20</td><td>14</td><td>2</td></tr></table></div>
       </div>
 
       <div class="legend">
@@ -1592,6 +1609,7 @@
   <script>
     const tabs = document.querySelectorAll('.tab');
     const views = document.querySelectorAll('.view');
+    const sel = document.getElementById('navSelect');
     function show(v) {
       views.forEach(s => s.classList.toggle('active', s.id === 'view-' + v));
       tabs.forEach(t => {
@@ -1599,9 +1617,11 @@
         t.classList.toggle('active', on);
         t.setAttribute('aria-selected', on ? 'true' : 'false');
       });
+      if (sel) sel.value = v;
       window.scrollTo({ top:0, behavior:'auto' });
     }
     tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.view)));
+    if (sel) sel.addEventListener('change', () => show(sel.value));
   </script>
 </body>
 </html>
